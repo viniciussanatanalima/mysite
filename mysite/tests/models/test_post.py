@@ -1,10 +1,9 @@
 import pytest
-
-from blog.factories import Factories
+from blog.factories import UserFactory, PostFactory
 
 @pytest.fixture
 def post_published():
-    return PostFactory(title=='pytest with factory')
+    return PostFactory(title='pytest with factory')
 
 @pytest.mark.django_db
 def test_create_published_post(post_published):
